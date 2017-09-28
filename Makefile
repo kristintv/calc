@@ -16,6 +16,7 @@ function.o: src/function.c src/function.h
 .PHONY: test 
 Calc_test: test/main.o test/function_test.o
 	@gcc $(CFLAGS) test/main.o test/function_test.o function.o -o Calc_test -lm
+	./Calc_test
 	
 test/main.o: test/main.c src/function.h
 	@gcc $(CFLAGS) -I thirdparty -c test/main.c -o test/maint.o -lm 
