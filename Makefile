@@ -15,7 +15,7 @@ Calc_test: test/maint.o test/function_test.o
 	gcc test/maint.o test/function_test.o  -o test -lm -I thirdparty
 	./test
 	
-test/main.o: test/main.c src/function.h
+test/maint.o: test/main.c src/function.h
 	gcc -I thirdparty -c test/main.c -o test/maint.o -lm 
 
 test/function_test.o: src/function.h test/function_test.c
