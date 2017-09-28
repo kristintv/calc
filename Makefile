@@ -12,8 +12,8 @@ function.o: src/function.c src/function.h
 	gcc  -c src/function.c -o function.o
 	
 Calc_test: test/maint.o test/function_test.o
-	gcc test/maint.o test/function_test.o  -o test -lm -I thirdparty
-	./test
+	gcc test/maint.o test/function_test.o  -o testik -lm -I thirdparty
+	./testik
 	
 test/maint.o: test/main.c src/function.h
 	gcc -I thirdparty -c test/main.c -o test/maint.o -lm 
