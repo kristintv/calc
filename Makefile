@@ -1,4 +1,4 @@
-.PHONY: clean all test
+.PHONY: main
 CFLAGS = -Wall -Werror -MP -MMD 
 
 all: Calc
@@ -13,6 +13,7 @@ main.o: src/main.c src/function.h
 function.o: src/function.c src/function.h 
 	@gcc $(CFLAGS) -c src/function.c -o function.o
 
+.PHONY: test 
 test: 
 	make Calc_test
 	Calc_test 
