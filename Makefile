@@ -1,6 +1,6 @@
 .PHONY: main
 
-all: Calc
+all: Calc Calc_test
 
 Calc: main.o function.o
 	gcc  main.o function.o -o Quard -lm
