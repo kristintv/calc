@@ -10,8 +10,7 @@ main.o: src/main.c src/function.h
 
 function.o: src/function.c src/function.h 
 	gcc  -c src/function.c -o function.o
-
-.PHONY: test 
+	
 Calc_test: test/main.o test/function_test.o
 	gcc test/main.o test/function_test.o  -o Calc_test -lm
 	./Calc_test
