@@ -15,24 +15,25 @@ int main()
 	scanf("%d", &c);
 	if ((a == 0) || ((a == 0) && (b == 0)) || ((a == 0) && (b ==0) && (c == 0))){
 		printf("INVALID_ARGUMENTS!!!");
-		break;
 	}
-	D = Discr(a, b, c);
-	i = Check(D);
+	else {
+		D = Discr(a, b, c);
+		i = Check(D);
 
-	switch (i) {
-		case 0:
-			x = ((-1) * b) / (2 * a);
-			printf ("%.2f", x);
-			break;
-		case 1:
-			printf ("Has no roots");
-			break;
-		case 2:
-			x1 = ((-1) * b + sqrt(D)) / (2 * a);			
-			x2 = ((-1) * b - sqrt(D)) / (2 * a);
-			printf("First roots:%.2f.\nSecond roots:%.2f.\n", x1, x2);
-			break;
+		switch (i) {
+			case 0:
+				x = ((-1) * b) / (2 * a);
+				printf ("%.2f", x);
+				break;
+			case 1:
+				printf ("Has no roots");
+				break;
+			case 2:
+				x1 = ((-1) * b + sqrt(D)) / (2 * a);			
+				x2 = ((-1) * b - sqrt(D)) / (2 * a);
+				printf("First roots:%.2f.\nSecond roots:%.2f.\n", x1, x2);
+				break;
+		}
 	}
 	return 0;
 }
