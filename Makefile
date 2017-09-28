@@ -14,10 +14,6 @@ function.o: src/function.c src/function.h
 	@gcc $(CFLAGS) -c src/function.c -o function.o
 
 .PHONY: test 
-test: 
-	make Calc_test
-	Calc_test 
-
 Calc_test: test/main.o test/function_test.o
 	@gcc $(CFLAGS) test/main.o test/function_test.o function.o -o Calc_test -lm
 	
