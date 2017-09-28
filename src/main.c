@@ -4,15 +4,19 @@
 
 int main() 
 {
-	int a,b,c,D,i;
+	int a, b, c, D, i;
 	float x, x1, x2;
-	printf("a*(x*x)+b*x+c=0\n");
-	printf("Input a=");
-	scanf("%d",&a);
-	printf("Input b=");
-	scanf("%d",&b);
-	printf("Input c=");
-	scanf("%d",&c);
+	printf("a * (x * x) + b * x + c = 0\n");
+	printf("Input a = ");
+	scanf("%d", &a);
+	printf("Input b = ");
+	scanf("%d", &b);
+	printf("Input c = ");
+	scanf("%d", &c);
+	if ((a == 0) || ((a == 0) && (b == 0)) || ((a == 0) && (b ==0) && (c == 0)){
+		printf("INVALID_ARGUMENTS!!!");
+		break;
+	}
 	D = Discr(a, b, c);
 	i = Check(D);
 
@@ -27,7 +31,7 @@ int main()
 		case 2:
 			x1 = ((-1) * b + sqrt(D)) / (2 * a);			
 			x2 = ((-1) * b - sqrt(D)) / (2 * a);
-			printf("First roots:%.2f.\nSecond roots:%.2f.\n",x1, x2);
+			printf("First roots:%.2f.\nSecond roots:%.2f.\n", x1, x2);
 			break;
 	}
 	return 0;
