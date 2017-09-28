@@ -1,8 +1,5 @@
 .PHONY: main
-
-all: Calc Calc_test
-
-Calc: main.o function.o
+main: main.o function.o
 	gcc  main.o function.o -o Quard -lm
 
 main.o: src/main.c src/function.h
@@ -10,8 +7,8 @@ main.o: src/main.c src/function.h
 
 function.o: src/function.c src/function.h 
 	gcc  -c src/function.c -o function.o
-	
-Calc_test: test/maint.o test/function_test.o
+.PHONY: test	
+test: test/maint.o test/function_test.o
 	gcc test/maint.o test/function_test.o  -o testik -lm -I thirdparty
 	./testik
 	
