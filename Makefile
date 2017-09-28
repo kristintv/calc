@@ -9,11 +9,11 @@ function.o: src/function.c src/function.h
 	gcc  -c src/function.c -o function.o
 .PHONY: test	
 test: test/maint.o test/function_test.o
-	gcc test/maint.o test/function_test.o  -o testik -lm -I thirdparty
+	gcc test/maint.o test/function_test.o  -o testik -lm -I thirdparty 
 	./testik
 	
 test/maint.o: test/main.c src/function.h
-	gcc -I thirdparty -c test/main.c -o test/maint.o -lm 
+	gcc -I thirdparty -c test/main.c -o test/maint.o -lm -Isrc
 
 test/function_test.o: src/function.h test/function_test.c
 	gcc -I thirdparty -c test/function_test.c -o test/function_test.o -lm 
