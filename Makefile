@@ -15,7 +15,7 @@ test: test/maint.o test/function_test.o
 test/maint.o: test/main.c src/function.h
 	gcc -Ithirdparty -c test/main.c -o test/maint.o -lm 
 
-test/function_test.o: src/function.h test/function_test.c
-	gcc -Ithirdparty -c test/function_test.c -o test/function_test.o -lm 
+test/function_test.o: src/function.h test/function_test.c src/function.c
+	gcc -Ithirdparty -c test/function_test.c src/function.c -o test/function_test.o -lm 
 
 
